@@ -956,14 +956,24 @@ function generate() {
   const zm = zodiacMods[zodiac.name];
   const em = etoMods[eto.name];
 
+  const groupDescs = {
+    1: 'まっすぐな意志で道を切り開く、行動派',
+    2: '直感と感性で人を惹きつける、魅力派',
+    3: '場を盛り上げ、人を笑顔にする、表現派',
+    4: 'ビジョンを持ち、物事を整える、統率派',
+    5: '自由を愛し、枠にとらわれない、冒険派',
+    6: '人を包み込む温かさを持つ、包容派',
+    7: '深く追求し、知識を極める、探求派',
+    8: '圧倒的なエネルギーで突き進む、突破派',
+    9: '繊細な感性と深い洞察を持つ、感性派'
+  };
+
   const html = `
     <div class="karte-head">
       <span class="type-badge" style="background:${group.colorSoft};color:${group.color}">${group.icon} ${subName}</span>
       <h2>${subDesc}</h2>
-      <div class="subtype">${group.name}｜超入門編</div>
+      <div class="subtype">${group.name}｜${groupDescs[groupNum]}</div>
       <div class="input-tags">
-        <span class="input-tag">${zodiac.emoji} ${zodiac.name}</span>
-        <span class="input-tag">${eto.emoji} ${eto.name}年生まれ</span>
         <span class="input-tag">${bm.label}</span>
       </div>
     </div>
@@ -974,13 +984,16 @@ function generate() {
       </div>
       <hr class="divider">
       <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:18px 20px;">
-        <p style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin:0 0 12px;">📌 もっと詳しく知りたい方へ</p>
-        <p style="font-size:13px;color:var(--color-text-primary);margin:0 0 4px;">🔸 <strong>今すぐPDFで受け取りたい</strong></p>
-        <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 4px;">coconalaで下記を検索👆</p>
-        <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 14px;background:white;padding:7px 12px;border-radius:8px;">「結愛の九命析術｜${tNum}${subName}」</p>
-        <p style="font-size:11px;color:var(--color-text-secondary);margin:0 0 14px;">仕事運・恋愛傾向・注意点まで全部わかる中級鑑定PDFがすぐ手に入るわよ🌸</p>
-        <p style="font-size:13px;color:var(--color-text-primary);margin:0 0 4px;">🔸 <strong>あなただけの個別鑑定を受けたい</strong></p>
-        <p style="font-size:11px;color:var(--color-text-secondary);margin:0;">coconalaの結愛プロフィールから個別鑑定を発注してね<br>※24時間以内にお届けします</p>
+        <p style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin:0 0 14px;">もっと詳しく知りたい方へ</p>
+
+        <p style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin:0 0 6px;">全31タイプをまとめて読みたい方</p>
+        <a href="https://vrcn5x6sgldv7umaszxm.stores.jp/items/69c9004179443d152198d0e1" target="_blank" style="display:block;background:#c9a84c;color:white;text-align:center;padding:12px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;margin:0 0 16px;">全31タイプ収録PDF（通常2,000円→今だけ500円）</a>
+
+        <p style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin:0 0 6px;">自分のタイプだけ欲しい方</p>
+        <a href="https://coconala.com/users/5984691" target="_blank" style="display:block;background:white;color:#333;border:1px solid #ddd;text-align:center;padding:12px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;margin:0 0 16px;">coconalaでタイプ別PDFを見る（500円/枚）</a>
+
+        <p style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin:0 0 6px;">個別鑑定を受けたい方</p>
+        <a href="https://coconala.com/services/4142753" target="_blank" style="display:block;background:white;color:#333;border:1px solid #ddd;text-align:center;padding:12px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;margin:0;">結愛の個別鑑定はこちら</a>
       </div>
     </div>
     <div class="karte-footer">
